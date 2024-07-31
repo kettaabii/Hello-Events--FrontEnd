@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+  import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Contact} from "../model/contact";
@@ -9,12 +9,16 @@ import {Contact} from "../model/contact";
 })
 export class ContactServiceService {
   urlApi=`http://localhost:8080`
-
+  userUrlApi=`http://localhost:8080/user`
+  adminUrlApi=`http://localhost:8080/admin`
   constructor(private http:HttpClient) { }
 
-  sendMessage(Contact):Observable<Contact>{
+  sendMessage(contact:Contact):Observable<Contact>{
+    return this.http.post(`${this.userUrlApi}/sendMessage`,contact)
+  }
 
-    return this.http.post()
+  showAllMessages():Observable<any>{
+    return this.http.get<Array<Contact>>(`${this.adminUrlApi}/contacts`)
   }
 
 }
