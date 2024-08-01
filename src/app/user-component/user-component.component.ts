@@ -16,7 +16,10 @@ export class UserComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.ListUsers()
+
+
   }
+
 
   constructor(private userService: UserServiceService) {
   }
@@ -29,5 +32,15 @@ export class UserComponentComponent implements OnInit {
     })
   }
 
-
+  deleteUser(userId: number): void {
+    this.userService.DeleteUser(userId).subscribe(
+      response => {
+        console.log('User deleted successfully', response);
+        this.Getusers = this.Getusers.filter(user => user.userId !== userId);
+      },
+      error => {
+        console.error('There was an error!', error);
+      }
+    );
+  }
 }
