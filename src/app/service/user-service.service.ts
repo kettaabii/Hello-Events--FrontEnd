@@ -13,11 +13,12 @@ api:`http://localhost:8080`
   constructor(private http:HttpClient) { }
 
 
-ListUser(user:User):Observable<User> {
-  return this.http.get(`${this.api}/admin/ListUsers`)
 
-}
-DeleteUser(id:number):Observable<any>{
+  ListUser(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.api}/admin/ListUsers`);
+  }
+
+  DeleteUser(id:number):Observable<any>{
   return this.http.delete(`${this.api}/deleteUser/`+id)
 }
 
