@@ -1,1 +1,25 @@
-<p>ticket-component works!</p>
+<form [formGroup]="AddTicketForm" (ngSubmit)="saveTicket()" class="mt-4">
+  <div class="form-group">
+    <label for="ticketId">Ticket ID :</label>
+    <input id="ticketId" formControlName="ticketId" type="number" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="ticketPrice">Ticket Price :</label>
+    <input id="ticketPrice" formControlName="ticketPrice" type="number" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="ticketDate">Ticket Date :</label>
+    <input id="ticketDate" formControlName="ticketDate" type="date" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="ticketCode">Ticket Code :</label>
+    <input id="ticketCode" formControlName="ticketCode" type="text" class="form-control">
+  </div>
+
+  <div class="btnadd">
+    <button type="submit" class="btn btn-primary btn-block">Add</button>
+  </div>
+</form>
