@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {EventCategory} from "../enum/event-category";
+import {Localisation} from "../enum/localisation";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventServiceService {
+  searchUrl=`http://localhost:8080/search`
   urlApi=`http://localhost:8080`
   userUrlApi=`http://localhost:8080/user`
   adminUrlApi=`http://localhost:8080/admin`
@@ -14,16 +17,41 @@ export class EventServiceService {
   addEvenement(event:Event):Observable<Event>{
     return this.http.post(`${this.adminUrlApi}/addEvent`,event)
   }
+
+
   AfficherListEvents():Observable<any>{
     return this.http.get<Array<Event>>(`${this.urlApi}/getEvents`)
   }
+
+
   AfficherEvent(idEvent:Number):Observable<any>{
     return this.http.get<Event>(`${this.urlApi}/getEvent`+idEvent)
   }
+
+
   deleteEvent(id:Number):Observable<any>{
     return this.http.delete(`${this.adminUrlApi}/deleteEvent/`+id)
   }
+
+
+
   UpdateEvent(id:Number,event:Event):Observable<any>{
     return this.http.put(`${this.adminUrlApi}/updateEvent/`+id , event)
+  }
+
+
+  SearchEvents(eventName : string ,eventDate :string ,lieu:Localisation,description:string , categorie:EventCategory,minPrice:number , maxPrice:number ): Observable<Event[]> {
+    let params = new HttpParams();
+    if (eventName) params = params.set('eventName', eventName);
+    if (eventDate) params = params.set('eventDate', eventDate);
+    if (lieu) params = params.set('lieu', lieu);
+    if (description) params = params.set('description', description);
+    if (categorie) params = params.set('categorie', categorie);
+    if (minPrice) params = params.set('minPrice', minPrice);
+    if (maxPrice) params = params.set('maxPrice', maxPrice);
+
+
+
+    return this.http.get<Event[]>(this.searchUrl, { params });
   }
 }

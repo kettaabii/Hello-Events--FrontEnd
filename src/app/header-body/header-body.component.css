@@ -1,0 +1,26 @@
+.navbar-body{
+  font-family: 'Arial', sans-serif;
+  display: flex; flex-wrap: wrap; justify-content: space-around;
+  background-color: #D1E6FF;
+  padding-top: 6rem;
+  margin-top: -4rem;
+  padding-bottom: 4rem;
+  border-bottom-left-radius: 2rem ;
+  border-bottom-right-radius: 2rem ;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.navbar-cat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.oval-shape {
+  width: 8rem;
+  height: 6rem;
+  border-radius:200px 200px 180px 180px / 190px 190px  80px 80px;
+  vertical-align:middle;
+}
+.dem{
+  margin:15px;
+  box-shadow:0 0 0 0.3rem #3775f8;
+}
