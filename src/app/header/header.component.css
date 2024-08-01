@@ -1,0 +1,16 @@
+* {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+}
+
+.header-nav {
+  padding: 2rem;
+  border-bottom-left-radius: 2rem ;
+  border-bottom-right-radius: 2rem ;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
