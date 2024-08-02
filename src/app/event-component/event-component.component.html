@@ -1,0 +1,24 @@
+
+
+
+<div class="event-container container mt-5">
+  <h2 class="text-center">Liste des Événements</h2>
+  <ul class="event-list list-group mt-4">
+    <li class="event-item list-group-item d-flex justify-content-between align-items-center" *ngFor="let event of Getevent">
+      <div>
+        <div class="event-id">ID: {{event.eventId}}</div>
+        <div class="event-name">Nom: {{event.eventName}}</div>
+        <div class="event-description">Description: {{event.eventDescription}}</div>
+        <div class="event-location">Localisation: {{event.location}}</div>
+        <div class="event-date">Date: {{event.eventDate | date}}</div>
+        <div class="event-start-time">Heure de début: {{event.eventStartTime | date:'shortTime'}}</div>
+        <div class="event-category">Catégorie: {{event.eventCategory}}</div>
+        <div class="event-seats">Places: {{event.seats}}</div>
+        <div class="event-ticket-price">Prix du billet: {{event.ticketPrice | currency}}</div>
+      </div>
+      <div class="d-flex flex-wrap">
+        <button class="btn btn-danger mr-2 mb-2" (click)="deleteEvent(event.eventId)">Supprimer</button>
+      </div>
+    </li>
+  </ul>
+</div>
