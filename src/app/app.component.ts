@@ -44,14 +44,16 @@ import {EventComponentComponent} from "./event-component/event-component.compone
 })
 export class AppComponent {
   title = 'HelloEvent';
-  @ViewChild('eventComponentDiv') eventComponentDiv!: ElementRef;
+
+ // @ViewChild('eventComponentDiv') eventComponentDiv!: ElementRef;
+
   // showEventComponent() {
   //   this.eventComponentDiv.nativeElement.style.display = 'block';
   // }
-  toggleEventComponent() {
+/*  toggleEventComponent() {
     const currentDisplay = this.eventComponentDiv.nativeElement.style.display;
     this.eventComponentDiv.nativeElement.style.display = currentDisplay === 'none' || currentDisplay === '' ? 'block' : 'none';
-  }
+  } */
 }
 
 
