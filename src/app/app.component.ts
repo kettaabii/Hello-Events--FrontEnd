@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 import {HeaderComponent} from "./component/header/header.component";
 import {HeaderBodyComponent} from "./component/header-body/header-body.component";
@@ -26,6 +26,7 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import {EventComponentComponent} from "./event-component/event-component.component";
 
 
 
@@ -33,7 +34,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
   selector: 'app-root',
   standalone: true,
 
-  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent],
+  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent, EventComponentComponent, RouterLink],
 
 
 
