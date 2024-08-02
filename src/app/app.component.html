@@ -19,6 +19,11 @@
 <app-header-body></app-header-body>
 <app-cardlist></app-cardlist>
 <app-footer></app-footer>
+
+
+<app-event-component></app-event-component>
+
+
 -->
 
 
@@ -38,4 +43,211 @@
 
 
 
-<app-dashbord></app-dashbord>
+
+
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="sidebar">
+  <div class="logo-details">
+    <i class='bx bxl-c-plus-plus icon'></i>
+    <!--<div class="logo_name">CodingLab</div>  -->
+    <i class='bx bx-menu' id="btn" ></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+      <i class='bx bx-search' ></i>
+      <input type="text" placeholder="Search...">
+      <span class="tooltip">Search</span>
+    </li>
+    <li>
+      <a [routerLink]="['/home']">
+        <i class='bx bx-grid-alt'></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a [routerLink]="['/home']">
+        <i class='bx bx-user' ></i>
+        <span class="links_name">User</span>
+      </a>
+      <span class="tooltip">User</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-chat' ></i>
+        <span class="links_name">Messages</span>
+      </a>
+      <span class="tooltip">Messages</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-pie-chart-alt-2' ></i>
+        <span class="links_name">Analytics</span>
+      </a>
+      <span class="tooltip">Analytics</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-folder' ></i>
+        <span class="links_name">File Manager</span>
+      </a>
+      <span class="tooltip">Files</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Order</span>
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-heart' ></i>
+        <span class="links_name">Saved</span>
+      </a>
+      <span class="tooltip">Saved</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-grid-alt'></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-user' ></i>
+        <span class="links_name">User</span>
+      </a>
+      <span class="tooltip">User</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-chat' ></i>
+        <span class="links_name">Messages</span>
+      </a>
+      <span class="tooltip">Messages</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-pie-chart-alt-2' ></i>
+        <span class="links_name">Analytics</span>
+      </a>
+      <span class="tooltip">Analytics</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-folder' ></i>
+        <span class="links_name">File Manager</span>
+      </a>
+      <span class="tooltip">Files</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li class="profile">
+      <div class="profile-details">
+        <img src="https://byjaris.com/code/img/p07.jpg" alt="profileImg">
+        <div class="name_job">
+          <div class="name">Jaris GV</div>
+          <div class="job">Web designer</div>
+        </div>
+      </div>
+      <i class='bx bx-log-out' id="log_out" ></i>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+
+<div>
+  <app-event-component></app-event-component>
+</div>
+
+
+  <div id="header">
+    <div class="header uboxed">
+      <ul class="logo">
+        <li>
+          <img src="https://byjaris.com/img/byjaris.svg" alt="Fimanbol">
+        </li>
+      </ul>
+      <ul class="menu">
+        <li><img src="https://byjaris.com/code/icons/home-alt.svg" alt="Fimanbol"></li>
+        <li><img src="https://byjaris.com/code/icons/menu-alt.svg" alt="Fimanbol"></li>
+        <li>
+          <div id="lang">
+            <div class="selected"><img src="https://byjaris.com/code/icons/flag-en.svg" alt="English"></div>
+            <div class="options">
+              <a href="#"><img src="https://byjaris.com/code/icons/flag-en.svg" alt="English"></a>
+              <a href="#"><img src="https://byjaris.com/code/icons/flag-pt.svg" alt="Português"></a>
+              <a href="#"><img src="https://byjaris.com/code/icons/flag-es.svg" alt="Español"></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header-space"></div>
+
+
+
+
+
+
+
+
+</section>
+
+<script src="https://byjaris.com/code/libs/jquery.min.js"></script>
+<script src="https://byjaris.com/code/libs/wow.js"></script>
+<script></script>
+
+

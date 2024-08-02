@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Ev} from "../model/event";
 import {EventServiceService} from "../service/event-service.service";
-import {CurrencyPipe, DatePipe} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgFor} from "@angular/common";
 
 @Component({
   selector: 'app-event-component',
   standalone: true,
   imports: [
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+      NgFor,
   ],
   templateUrl: './event-component.component.html',
   styleUrl: './event-component.component.css'
