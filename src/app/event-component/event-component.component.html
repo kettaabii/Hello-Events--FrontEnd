@@ -1,24 +1,24 @@
-
-
-
 <div class="event-container container mt-5">
-  <h2 class="text-center">Liste des Événements</h2>
-  <ul class="event-list list-group mt-4">
-    <li class="event-item list-group-item d-flex justify-content-between align-items-center" *ngFor="let event of Getevent">
-      <div>
-        <div class="event-id">ID: {{event.eventId}}</div>
-        <div class="event-name">Nom: {{event.eventName}}</div>
-        <div class="event-description">Description: {{event.eventDescription}}</div>
-        <div class="event-location">Localisation: {{event.location}}</div>
-        <div class="event-date">Date: {{event.eventDate | date}}</div>
-        <div class="event-start-time">Heure de début: {{event.eventStartTime | date:'shortTime'}}</div>
-        <div class="event-category">Catégorie: {{event.eventCategory}}</div>
-        <div class="event-seats">Places: {{event.seats}}</div>
-        <div class="event-ticket-price">Prix du billet: {{event.ticketPrice | currency}}</div>
+  <h2 class="text-center mb-4">Liste des Événements</h2>
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let event of Getevent">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{event.eventName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{event.eventCategory}}</h6>
+          <p class="card-text">{{event.eventDescription}}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Localisation:</strong> {{event.location}}</li>
+            <li class="list-group-item"><strong>Date:</strong> {{event.eventDate | date}}</li>
+            <li class="list-group-item"><strong>Heure de début:</strong> {{event.eventStartTime | date:'shortTime'}}</li>
+            <li class="list-group-item"><strong>Places:</strong> {{event.seats}}</li>
+            <li class="list-group-item"><strong>Prix du billet:</strong> {{event.ticketPrice | currency}}</li>
+          </ul>
+        </div>
+        <div class="card-footer text-right">
+          <button class="btn btn-danger" (click)="deleteEvent(event.eventId)">Supprimer</button>
+        </div>
       </div>
-      <div class="d-flex flex-wrap">
-        <button class="btn btn-danger mr-2 mb-2" (click)="deleteEvent(event.eventId)">Supprimer</button>
-      </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 import {HeaderComponent} from "./component/header/header.component";
 import {HeaderBodyComponent} from "./component/header-body/header-body.component";
@@ -26,7 +26,12 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+
 import {UserhomeComponent} from "./userhome/userhome.component";
+
+import {EventComponentComponent} from "./event-component/event-component.component";
+import {AdminComponentComponent} from "./admin-component/admin-component.component";
+
 
 
 
@@ -34,7 +39,9 @@ import {UserhomeComponent} from "./userhome/userhome.component";
   selector: 'app-root',
   standalone: true,
 
-  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent, CardlistComponent, FooterComponent, UserhomeComponent],
+
+  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent, CardlistComponent, FooterComponent, UserhomeComponent, EventComponentComponent, RouterLink, AdminComponentComponent],
+
 
 
 
@@ -44,6 +51,16 @@ import {UserhomeComponent} from "./userhome/userhome.component";
 })
 export class AppComponent {
   title = 'HelloEvent';
+
+ // @ViewChild('eventComponentDiv') eventComponentDiv!: ElementRef;
+
+  // showEventComponent() {
+  //   this.eventComponentDiv.nativeElement.style.display = 'block';
+  // }
+/*  toggleEventComponent() {
+    const currentDisplay = this.eventComponentDiv.nativeElement.style.display;
+    this.eventComponentDiv.nativeElement.style.display = currentDisplay === 'none' || currentDisplay === '' ? 'block' : 'none';
+  } */
 }
 
 
