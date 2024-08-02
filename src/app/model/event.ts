@@ -2,7 +2,7 @@ import {Ticket} from "./ticket";
 import {Localisation} from "../enum/localisation";
 import {EventCategory} from "../enum/event-category";
 
-export interface Event {
+export interface Ev {
   eventId:number
   eventName:string
   eventDescription:string
