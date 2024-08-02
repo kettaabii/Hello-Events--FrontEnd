@@ -13,8 +13,8 @@ export class ContactServiceService {
   adminUrlApi=`http://localhost:8080/admin`
   constructor(private http:HttpClient) { }
 
-  sendMessage(contact:Contact):Observable<Contact>{
-    return this.http.post(`${this.userUrlApi}/sendMessage`,contact)
+  sendMessage(contact:Contact){
+     this.http.post(`${this.userUrlApi}/sendMessage`,contact)
   }
 
   showAllMessages():Observable<any>{
