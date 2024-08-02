@@ -1,0 +1,22 @@
+.concert-card-small {
+  max-width: 20rem;
+  margin: 16px;}
+mat-card-actions {
+  justify-content: center;
+  background-color: #3775f8;
+}
+mat-card-actions :hover{
+  background-color: #f88e37;
+}
+.price {
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #ffffff;
+}
+.chips{
+   display: flex ;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
