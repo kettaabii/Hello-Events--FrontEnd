@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {ChangeDetectionStrategy, Component, OnInit, output, signal} from '@angular/core';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from "@angular/material/icon";
 import { MatSelectModule } from '@angular/material/select';
@@ -10,27 +10,34 @@ import { Router } from "@angular/router";
 import { Localisation } from "../../enum/localisation";
 import { NgForOf, NgFor } from "@angular/common";
 
+import {EventSharedService} from "../../service/event-shared.service";
+
+
+
 @Component({
   selector: 'app-search-form',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatSelectModule, MatButtonModule, ReactiveFormsModule, NgForOf, NgFor],
+  imports: [MatFormFieldModule ,MatInputModule, MatIconModule, MatSelectModule, MatButtonModule, ReactiveFormsModule, NgForOf, NgFor ],
   templateUrl: './search-form.component.html',
   styleUrl: './search-form.component.css'
 })
 export class SearchFormComponent implements OnInit {
+
   searchform!: FormGroup;
-  listEvents: any;
+
   localisation = Localisation;
   keys!: string[];
 
   constructor(
     private fb: FormBuilder,
     private eventService: EventServiceService,
-    private router: Router
+    private router: Router,
+    private eventSharedService:EventSharedService
   ) { }
 
   ngOnInit(): void {
     this.keys = Object.values(this.localisation).filter((value) => typeof value === 'string');
+    console.log(this.keys);
     this.initForm();
   }
 
@@ -47,8 +54,9 @@ export class SearchFormComponent implements OnInit {
     let { eventName, lieu, date } = this.searchform.value;
     console.log("eventName: " + eventName);
     this.eventService.SearchEvents(eventName, date, lieu).subscribe(res => {
-      this.listEvents = res;
+      this.eventSharedService.updateEvents(res);
       console.log(res);
+
     });
   }
 }

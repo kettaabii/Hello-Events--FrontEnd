@@ -1,0 +1,15 @@
+<mat-card *ngIf="event">
+  <mat-card-header>
+    <mat-card-title>{{event.eventName}}</mat-card-title>
+    <mat-card-subtitle>{{event.eventDate | date:'dd-MM-yyyy'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="event.picture" [alt]="event.eventName">
+  <mat-card-content>
+    <p>{{event.description}}</p>
+    <p>Location: {{event.location}}</p>
+    <p>Price: {{event.ticketPrice}} DH</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="bookTICKET(event.eventId)"color="primary">Confirm Reservation</button>
+  </mat-card-actions>
+</mat-card>

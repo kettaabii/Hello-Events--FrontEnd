@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-hero-card',
