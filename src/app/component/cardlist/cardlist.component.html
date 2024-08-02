@@ -9,32 +9,40 @@
     <div class="card-list-btn">
    <button mat-stroked-button>explorez plus</button>
     </div></div>
-    <div class="cards-container">
-      <mat-card class="concert-card-small">
+    <div class="cards-container" style="display: flex; flex-wrap: wrap;">
 
-          <img mat-card-image src="/assets/concert.jpg" alt="Maitre GIMS">
+      @if (eventSharedService.events().length) {
+        @for (event of eventSharedService.events(); track event.id) {
+      <mat-card  class="concert-card-small">
+
+          <img mat-card-image [src]="event.picture" alt="Maitre GIMS">
 
         <mat-card-content>
-          <h3>TIF a casablanca</h3>
+          <h3>{{ event.eventName }}</h3>
           <div class="chips">
           <mat-chip>
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_on"></mat-icon>
-            Casablanca
+            {{event.location}}
           </mat-chip>
           <mat-chip>
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="calendar_month"></mat-icon>
-            17-06-2025
-          </mat-chip>
+            {{ event.eventDate | date :'dd-MM-yyyy' }}
+          </mat-chip >
           </div>
-          <p>un concert innédit de Maitre Gims vous attend a Casa Anfa</p>
+          <p>{{ event.description }}</p>
 
         </mat-card-content>
         <mat-card-actions style="display: flex; justify-content: space-between;">
           <button mat-flat-button >reserver </button>
-          <span class="price">100 DH</span>
+          <span class="price">{{ event.ticketPrice }}</span>
         </mat-card-actions>
 
       </mat-card>
+        }
+      }
+      @else {
+        <p>Aucun événement trouvé.</p>
+      }
 
     </div>
 

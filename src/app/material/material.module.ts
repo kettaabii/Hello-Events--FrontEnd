@@ -20,23 +20,7 @@ import { MatListModule } from "@angular/material/list"
 
 @NgModule({
   exports:[
-    MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatIconModule,
-        MatDialogModule,
-        MatMenuModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatListModule,
-        MatCardModule,
-        MatChipsModule
+
   ]
 
 
