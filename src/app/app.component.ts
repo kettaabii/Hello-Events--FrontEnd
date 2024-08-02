@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {HeaderComponent} from "./header/header.component";
-import {HeaderBodyComponent} from "./header-body/header-body.component";
-import {SearchFormComponent} from "./search-form/search-form.component";
-import {BodyCrouselComponent} from "./body-crousel/body-crousel.component";
+
+import {HeaderComponent} from "./component/header/header.component";
+import {HeaderBodyComponent} from "./component/header-body/header-body.component";
+import {SearchFormComponent} from "./component/search-form/search-form.component";
+import {BodyCrouselComponent} from "./component/body-crousel/body-crousel.component";
+import {CardlistComponent} from "./component/cardlist/cardlist.component";
+import {FooterComponent} from "./component/footer/footer.component";
 import {UserComponentComponent} from "./user-component/user-component.component";
 import {TicketComponentComponent} from "./ticket-component/ticket-component.component";
 import {DashbordComponentComponent} from "./dashbord-component/dashbord-component.component";
@@ -25,10 +28,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
+
   imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent],
+
+
+
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

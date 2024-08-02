@@ -1,0 +1,22 @@
+<div class="search-and-filter">
+  <form [formGroup]="searchform" (ngSubmit)="searchEvent()">
+    <mat-form-field appearance="outline">
+      <mat-label>Trouver un évenement</mat-label>
+      <input matInput id="enventName" formControlName="eventName" placeholder="rentrer le nom ici">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Où ?</mat-label>
+      <mat-select formControlName="lieu">
+        <mat-option *ngFor="let item of keys" [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Quand ?</mat-label>
+      <input matInput id="date" type="date" formControlName="date" placeholder="Date">
+    </mat-form-field>
+
+    <button mat-flat-button class="btn-search" type="submit">c'est Parti !</button>
+  </form>
+</div>

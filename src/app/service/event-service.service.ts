@@ -14,9 +14,9 @@ export class EventServiceService {
   adminUrlApi=`http://localhost:8080/admin`
   constructor(private http:HttpClient) { }
 
-  addEvenement(event:Event):Observable<Event>{
+  /*addEvenement(event:Event):Observable<Event>{
     return this.http.post(`${this.adminUrlApi}/addEvent`,event)
-  }
+  }*/
 
 
   AfficherListEvents():Observable<any>{
@@ -40,15 +40,12 @@ export class EventServiceService {
   }
 
 
-  SearchEvents(eventName : string ,eventDate :string ,lieu:Localisation,description:string , categorie:EventCategory,minPrice:number , maxPrice:number ): Observable<Event[]> {
+  SearchEvents(eventName: string, eventDate: string, lieu: Localisation): Observable<Event[]> {
     let params = new HttpParams();
     if (eventName) params = params.set('eventName', eventName);
     if (eventDate) params = params.set('eventDate', eventDate);
-    if (lieu) params = params.set('lieu', lieu);
-    if (description) params = params.set('description', description);
-    if (categorie) params = params.set('categorie', categorie);
-    if (minPrice) params = params.set('minPrice', minPrice);
-    if (maxPrice) params = params.set('maxPrice', maxPrice);
+    if (lieu) params = params.set('location', lieu);
+
 
 
 
