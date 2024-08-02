@@ -61,14 +61,15 @@
       <span class="tooltip">Search</span>
     </li>
     <li>
-      <a [routerLink]="['/home']">
+      <a [routerLink]="['/home']" (click)="showEventComponent()">
         <i class='bx bx-grid-alt'></i>
         <span class="links_name">Dashboard</span>
       </a>
       <span class="tooltip">Dashboard</span>
     </li>
+
     <li>
-      <a [routerLink]="['/home']">
+      <a [routerLink]="['/home']"(click)="toggleEventComponent()">
         <i class='bx bx-user' ></i>
         <span class="links_name">User</span>
       </a>
@@ -207,9 +208,8 @@
 </div>
 <section class="home-section">
 
-<div>
-  <app-event-component></app-event-component>
-</div>
+
+
 
 
   <div id="header">
@@ -239,7 +239,9 @@
 
 
 
-
+  <div #eventComponentDiv style="display:none">
+    <app-event-component></app-event-component>
+  </div>
 
 
 
