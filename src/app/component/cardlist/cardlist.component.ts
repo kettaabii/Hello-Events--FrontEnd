@@ -6,6 +6,7 @@ import {MatIcon} from "@angular/material/icon";
 import {SearchFormComponent} from "../search-form/search-form.component";
 import {EventSharedService} from "../../service/event-shared.service";
 import {DatePipe} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cardlist',
@@ -26,6 +27,16 @@ import {DatePipe} from "@angular/common";
 export class CardlistComponent {
 
 
-  constructor(public eventSharedService: EventSharedService) {
+  constructor(public eventSharedService: EventSharedService,private router:Router) {
+
   }
+  navigateToEventDetails(eventId: string | number | undefined) {
+    if (eventId !== undefined) {
+      this.router.navigate(['/event-details', eventId]);
+    } else {
+      console.error('Event ID is undefined');
+
+    }
+  }
+
 }

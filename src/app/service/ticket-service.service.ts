@@ -12,8 +12,12 @@ export class TicketServiceService {
   constructor(private http: HttpClient) { }
 
 
-  // Méthode pour ajouter un ticket
-  //saveTicket(ticket: Ticket , id:number): Observable<any> {
-  //  return this.http.post<any>(`${this.urlApi}/GetYourTicket`+id, ticket);
-//  }
+  saveTicket(ticket: {
+    ticketPrice: string;
+    ticketCode: string;
+    ticketId: string;
+    ticketDate: string
+  }, id: number): Observable<Blob> {
+   return this.http.post<Blob>(`${this.urlApi}/GetYourTicket`+id, ticket,{ responseType: 'blob' as 'json' });
+ }
 }

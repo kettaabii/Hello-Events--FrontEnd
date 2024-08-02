@@ -12,6 +12,8 @@ import { NgForOf, NgFor } from "@angular/common";
 
 import {EventSharedService} from "../../service/event-shared.service";
 
+
+
 @Component({
   selector: 'app-search-form',
   standalone: true,

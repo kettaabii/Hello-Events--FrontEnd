@@ -33,8 +33,8 @@
 
         </mat-card-content>
         <mat-card-actions style="display: flex; justify-content: space-between;">
-          <button mat-flat-button >reserver </button>
-          <span class="price">{{ event.ticketPrice }}</span>
+          <button mat-flat-button (click)="navigateToEventDetails(event.eventId)" >reserver </button>
+          <span class="price">{{ event.ticketPrice }} DH </span>
         </mat-card-actions>
 
       </mat-card>
