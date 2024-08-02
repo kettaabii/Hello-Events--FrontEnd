@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 
 import {HeaderComponent} from "./component/header/header.component";
@@ -44,6 +44,14 @@ import {EventComponentComponent} from "./event-component/event-component.compone
 })
 export class AppComponent {
   title = 'HelloEvent';
+  @ViewChild('eventComponentDiv') eventComponentDiv!: ElementRef;
+  // showEventComponent() {
+  //   this.eventComponentDiv.nativeElement.style.display = 'block';
+  // }
+  toggleEventComponent() {
+    const currentDisplay = this.eventComponentDiv.nativeElement.style.display;
+    this.eventComponentDiv.nativeElement.style.display = currentDisplay === 'none' || currentDisplay === '' ? 'block' : 'none';
+  }
 }
 
 
