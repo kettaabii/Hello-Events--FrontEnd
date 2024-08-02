@@ -1,0 +1,17 @@
+<div class="event-container container mt-5">
+  <h2 class="text-center mb-4">Liste des Contacts</h2>
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let contact of GetContacts">
+      <div class="card h-100 shadow-sm border-light">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{contact.contactName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <i class="fas fa-envelope"></i> {{contact.contactEmail}}
+          </h6>
+          <p class="card-text">{{contact.message}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
