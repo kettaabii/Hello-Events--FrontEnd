@@ -27,6 +27,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import {EventComponentComponent} from "./event-component/event-component.component";
+import {AdminComponentComponent} from "./admin-component/admin-component.component";
 
 
 
@@ -34,7 +35,7 @@ import {EventComponentComponent} from "./event-component/event-component.compone
   selector: 'app-root',
   standalone: true,
 
-  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent, EventComponentComponent, RouterLink],
+  imports: [RouterOutlet, HeaderComponent, HeaderBodyComponent, SearchFormComponent, BodyCrouselComponent, UserComponentComponent, TicketComponentComponent, DashbordComponentComponent, EventComponentComponent, RouterLink, AdminComponentComponent],
 
 
 
