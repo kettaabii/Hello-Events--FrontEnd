@@ -28,7 +28,7 @@ export class TicketComponentComponent implements OnInit {
     // Vous pouvez mettre ici des appels supplémentaires à l'initialisation si nécessaire
   }
 
-  saveTicket(): void {
+/*  saveTicket(): void {
     if (this.AddTicketForm.valid) {
       const ticket: Ticket = this.AddTicketForm.value;
       this.ticketService.saveTicket(ticket).subscribe(
@@ -40,5 +40,5 @@ export class TicketComponentComponent implements OnInit {
         }
       );
     }
-  }
+  }*/
 }
